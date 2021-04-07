@@ -4,26 +4,30 @@
 
     <div class="form-control">
       <label>Email</label>
-      <input type="text" placeholder="Email" />
+      <input type="text" placeholder="Email" formControlName="email" />
       <div class="validation"></div>
     </div>
 
     <div class="form-control">
-      <label>Пароль</label>
-      <input type="password" placeholder="Пароль" />
+      <label>Password</label>
+      <input
+        type="password"
+        placeholder="Password"
+        formControlName="password"
+      />
       <div class="validation"></div>
     </div>
 
     <div class="card">
-      <h2>Адрес</h2>
+      <h2>Address</h2>
 
       <div class="form-control">
-        <label>Страна</label>
+        <label>Country</label>
 
         <select>
-          <option value="ru">Россия</option>
-          <option value="ua">Украина</option>
-          <option value="by">Беларусь</option>
+          <option value="ru">Russia</option>
+          <option value="ua">Ukraine</option>
+          <option value="by">Belarus</option>
         </select>
       </div>
 
@@ -31,18 +35,18 @@
         <input type="text" />
       </div>
 
-      <button class="btn" type="button">Выбрать столицу</button>
+      <button class="btn" type="button">Pick a main city</button>
     </div>
 
     <div class="card">
-      <h2>Ваши навыки</h2>
-      <button class="btn" type="button">Добавить умение</button>
+      <h2>Skills</h2>
+      <button class="btn" type="button">Add skills</button>
       <div class="form-control">
         <label></label>
         <input type="text" />
       </div>
     </div>
 
-    <button class="btn" type="submit">Отправить</button>
+    <button class="btn" type="submit">Send</button>
   </form>
 </div>
