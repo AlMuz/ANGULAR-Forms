@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -11,15 +11,20 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.form = new FormGroup({
-      email: new FormControl(''),
-      password: new FormControl(null),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(8),
+      ]),
     });
   }
 
   submit() {
-    console.log('Form submitted', this.form);
+    if (this.form.valid) {
+      console.log('Form submitted', this.form);
 
-    const formData = { ...this.form.value };
-    console.log(formData);
+      const formData = { ...this.form.value };
+      console.log(formData);
+    }
   }
 }
