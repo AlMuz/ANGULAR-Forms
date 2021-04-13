@@ -15,6 +15,12 @@
         <small *ngIf="form.get('email').errors.email">
           Enter correct email
         </small>
+        <small *ngIf="form.get('email').errors.restrictedEmail">
+          This email is restricted
+        </small>
+        <small *ngIf="form.get('email').errors.uniqEmail">
+          This email is already taken
+        </small>
       </div>
     </div>
 
@@ -73,6 +79,8 @@
       </div>
     </div>
 
-    <button class="btn" type="submit" [disabled]="form.invalid">Send</button>
+    <button class="btn" type="submit" [disabled]="form.invalid || form.pending">
+      Send
+    </button>
   </form>
 </div>
