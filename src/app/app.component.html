@@ -39,13 +39,13 @@
       </div>
     </div>
 
-    <div class="card">
+    <div class="card" formGroupName="address">
       <h2>Address</h2>
 
       <div class="form-control">
         <label>Country</label>
 
-        <select>
+        <select formControlName="country">
           <option value="ru">Russia</option>
           <option value="ua">Ukraine</option>
           <option value="by">Belarus</option>
@@ -53,7 +53,7 @@
       </div>
 
       <div class="form-control">
-        <input type="text" />
+        <input type="text" formControlName="city" />
       </div>
 
       <button class="btn" type="button">Pick a main city</button>

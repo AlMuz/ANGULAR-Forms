@@ -16,6 +16,10 @@ export class AppComponent implements OnInit {
         Validators.required,
         Validators.minLength(8),
       ]),
+      address: new FormGroup({
+        country: new FormControl('ru'),
+        city: new FormControl('', Validators.required),
+      }),
     });
   }
 
