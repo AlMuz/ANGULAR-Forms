@@ -9,6 +9,7 @@ import { MyValidators } from './my.validators';
 })
 export class AppComponent implements OnInit {
   form: FormGroup;
+  appState: string = 'on';
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -35,6 +36,9 @@ export class AppComponent implements OnInit {
 
       const formData = { ...this.form.value };
       console.log(formData);
+
+      this.form.reset();
+      alert('Form successfully sent');
     }
   }
 
@@ -54,5 +58,9 @@ export class AppComponent implements OnInit {
   addSkill() {
     const control = new FormControl('', Validators.required);
     (<FormArray>this.form.get('skills')).push(control);
+  }
+
+  handleChange() {
+    console.log(this.appState);
   }
 }
